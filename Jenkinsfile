@@ -12,7 +12,7 @@ pipeline {
 
         stage('Verify') {
             steps {
-                sh 'ls -la target'
+                sh 'test -f target/kargo-0.0.1-SNAPSHOT.jar'
             }
         }
     }
