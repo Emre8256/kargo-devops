@@ -1,0 +1,58 @@
+# Help
+HELP.md
+
+# Maven / Java
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+!mvnw
+!mvnw.cmd
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Spring / STS
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+
+# Frontend
+kargo-frontend/node_modules/
+kargo-frontend/dist/
+kargo-frontend/dist-ssr/
+kargo-frontend/.env
+kargo-frontend/.env.*
+!kargo-frontend/.env.example
+kargo-frontend/*.local
+
+# IDE
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build folders
+build/
+dist/
+!**/src/main/**/build/
+!**/src/test/**/build/

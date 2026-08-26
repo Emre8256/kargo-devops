@@ -1,0 +1,21 @@
+INSERT INTO users (
+    first_name,
+    last_name,
+    email,
+    password,
+    phone,
+    role,
+    created_at
+) VALUES (
+    'System',
+    'Admin',
+    'admin@kargo.com',
+    '$2a$10$gOsN36wG9EO0Zhl16CVCfecQ3T/En/.qmbDmjZ0z0rwNTr6Kp.lti',
+    '5551112233',
+    'ADMIN',
+    CURRENT_TIMESTAMP
+);
+
+email: admin@kargo.com
+password: Admin123!
+role: ADMIN

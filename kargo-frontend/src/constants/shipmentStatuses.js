@@ -1,0 +1,8 @@
+export const SHIPMENT_STATUSES = [
+  'CREATED',
+  'ACCEPTED',
+  'IN_TRANSIT',
+  'OUT_FOR_DELIVERY',
+  'DELIVERED',
+  'CANCELLED'
+]
