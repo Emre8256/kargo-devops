@@ -16,4 +16,18 @@ pipeline {
             }
         }
     }
+
+    post {
+    success {
+        mail to: '42oyunus42@gmail.com',
+             subject: 'Kargo Pipeline Başarılı',
+             body: 'Kargo projesi başarıyla build edildi.'
+    }
+
+    failure {
+        mail to: '42oyunus42@gmail.com',
+             subject: 'Kargo Pipeline Başarısız',
+             body: 'Pipeline sırasında bir hata oluştu.'
+    }
+}
 }
