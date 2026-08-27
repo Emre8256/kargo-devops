@@ -5,29 +5,34 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'chmod +x mvnw'
-                sh './mvnw clean package -DskipTests'
+                bat 'mvnw.cmd clean package -DskipTests'
             }
         }
 
         stage('Verify') {
             steps {
-                sh 'test -f target/kargo-0.0.1-SNAPSHOT.jar'
+                bat 'if not exist target\\kargo-0.0.1-SNAPSHOT.jar exit /b 1'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                bat 'docker compose up --build -d'
             }
         }
     }
 
     post {
-    success {
-        mail to: '42oyunus42@gmail.com',
-             subject: 'Kargo Pipeline Başarılı',
-             body: 'Kargo projesi başarıyla build edildi.'
-    }
+        success {
+            mail to: '42oyunus42@gmail.com',
+                 subject: 'Kargo Pipeline Başarılı',
+                 body: 'Kargo projesi başarıyla build edildi ve deploy edildi.'
+        }
 
-    failure {
-        mail to: '42oyunus42@gmail.com',
-             subject: 'Kargo Pipeline Başarısız',
-             body: 'Pipeline sırasında bir hata oluştu.'
+        failure {
+            mail to: '42oyunus42@gmail.com',
+                 subject: 'Kargo Pipeline Başarısız',
+                 body: 'Pipeline sırasında bir hata oluştu.'
+        }
     }
-}
 }
