@@ -17,7 +17,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                bat 'docker compose up --build -d'
+                bat '"C:\\Users\\42oyu\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" compose up --build -d'
             }
         }
     }
