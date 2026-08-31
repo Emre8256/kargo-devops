@@ -60,6 +60,7 @@ public class SecurityConfig {
             auth.requestMatchers("/api/addresses/user/**").hasRole("ADMIN");
             auth.requestMatchers("/api/addresses/**").authenticated();
             auth.requestMatchers("/api/shipments/**").authenticated();
+            auth.requestMatchers("/actuator/prometheus").permitAll();
             auth.anyRequest().authenticated();
         });
 
